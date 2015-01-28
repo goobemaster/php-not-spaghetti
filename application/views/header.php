@@ -3,10 +3,10 @@
 <head>
   <title><?php echo $title; ?></title>
   <meta name="generator" content="Simple Blog">
-  <meta name="keywords" content="<?php $keywords; ?>">
-  <meta name="description" content="<?php $description; ?>">
-  <meta name="author" content="<?php $author; ?>">
-  <base href="<?php $base_url; ?>" target="_blank">
+  <meta name="keywords" content="<?php echo $keywords; ?>">
+  <meta name="description" content="<?php echo $description; ?>">
+  <meta name="author" content="<?php echo $author; ?>">
+  <base href="<?php echo $base_url; ?>" target="_blank">
   <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 

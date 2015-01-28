@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 28, 2015 at 05:44 PM
+-- Generation Time: Jan 28, 2015 at 05:57 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -45,14 +45,14 @@ INSERT INTO `configuration` (`id`, `key`, `value`) VALUES
 (4, 'description', '%author%''s blog'),
 (5, 'author', 'Default'),
 (6, 'header_background', 'SeaGreen'),
-(7, 'header_font', 'false'),
-(8, 'header_font_size', 'false'),
+(7, 'header_font', ''),
+(8, 'header_font_size', ''),
 (9, 'panel_background', 'Tan'),
-(10, 'content_background', 'false'),
+(10, 'content_background', ''),
 (11, 'page_background', 'beige'),
 (12, 'footer_background', 'SeaGreen'),
-(13, 'footer_font', 'false'),
-(14, 'footer_font_size', 'false');
+(13, 'footer_font', ''),
+(14, 'footer_font_size', '');
 
 --
 -- Indexes for dumped tables
