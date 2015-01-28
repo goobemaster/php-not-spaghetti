@@ -5,17 +5,18 @@ class Home extends CI_Controller {
 	public function index()
 	{
     $this->load->helper('url');
+    $this->load->model('Configuration', '', TRUE);
 
     $style_override = array('apply' => false,
-                            'header_background' => 'SeaGreen',
-                            'header_font' => false,
-                            'header_font_size' => false,
-                            'panel_background' => 'Tan',
-                            'content_background' => false,
-                            'page_background' => 'beige',
-                            'footer_background' => 'SeaGreen',
-                            'footer_font' => false,
-                            'footer_font_size' => false);
+                            'header_background' => $this->Configuration->get('header_background'),
+                            'header_font' => $this->Configuration->get('header_font'),
+                            'header_font_size' => $this->Configuration->get('header_font_size'),
+                            'panel_background' => $this->Configuration->get('panel_background'),
+                            'content_background' => $this->Configuration->get('content_background'),
+                            'page_background' => $this->Configuration->get('page_background'),
+                            'footer_background' => $this->Configuration->get('footer_background'),
+                            'footer_font' => $this->Configuration->get('footer_font'),
+                            'footer_font_size' => $this->Configuration->get('footer_font_size'));
 
     foreach ($style_override as $key => $value) {
       if ($value) {
@@ -24,11 +25,11 @@ class Home extends CI_Controller {
       }
     }
 
-    $meta_data = array('title' => 'Blog',
-                       'lang' => 'en-US',
-                       'keywords' => 'gabor major tech blog php ruby rails codeigniter',
-                       'description' => 'Gabor\'s personal blog',
-                       'author' => 'Gabor Major',
+    $meta_data = array('title' => $this->Configuration->get('title'),
+                       'lang' => $this->Configuration->get('lang'),
+                       'keywords' => $this->Configuration->get('keywords'),
+                       'description' => $this->Configuration->get('description'),
+                       'author' => $this->Configuration->get('author'),
                        'base_url' => base_url(),
                        'style_override' => $style_override);
 
