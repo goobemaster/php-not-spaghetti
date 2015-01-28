@@ -1,0 +1,60 @@
+#page {
+  width:100%;
+  position:relative;
+  min-height:1px;
+  padding-right:15px;
+  padding-left:15px;
+  padding-top:15px;
+  box-sizing:border-box;
+}
+
+#header {
+  background-color:black;
+  color:white;
+  padding:15px;
+  box-sizing:border-box;
+  font-size:15px;
+  font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#header h1 {
+  text-align:center;
+  font-size:36px;
+  margin-top:20px;
+  margin-bottom:10px;
+  line-height:1.1;
+}
+
+#panel {
+  background-color:#eeeeee;
+  height:300px;
+  width:200px;
+  float:left;
+  padding:15px;
+  line-height:30px;
+}
+
+#content {
+  width:500px;
+  float:left;
+  padding:15px;
+}
+
+#footer {
+  background-color:black;
+  color:white;
+  clear:both;
+  padding:5px;
+  text-align:center;
+  line-height:22px;
+}
+
+#footer h1, #footer h2 {
+  text-align:center;
+  font-size:15px;
+  font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#footer h2 {
+  font-size:12px;
+}

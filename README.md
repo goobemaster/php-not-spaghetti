@@ -1,1 +1,1 @@
-# php-not-spaghetti
+# php-simple-blog
