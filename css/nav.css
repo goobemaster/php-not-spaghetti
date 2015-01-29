@@ -20,5 +20,10 @@ nav h2 {
 
 nav p {
   padding-left:15px;
+  font-size:14px;
 }
 
+nav .break {
+  border-bottom:1px solid black;
+  margin-bottom:12px;
+}

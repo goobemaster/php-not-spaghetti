@@ -52,7 +52,11 @@
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
 }
 
-.blog article h2 {
+.blog article p {
+  padding-bottom:10px;
+}
+
+.blog article h1, .blog article h2 {
   clear:both;
   font-size:35px;
   line-height:72px;
@@ -60,4 +64,10 @@
   padding:0px 15px 30px 0px;
   text-transform:uppercase;
   color:black;
+}
+
+.blog article h2 {
+  font-size:27px;
+  line-height:64px;
+  padding:0px 0px 0px 0px;
 }

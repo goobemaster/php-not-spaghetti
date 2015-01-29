@@ -11,7 +11,7 @@
     </dl>
   </aside>
   <article>
-    <h2><?php echo $blog->title; ?></h2>
+    <h1><?php echo $blog->title; ?></h1>
     <?php echo $blog->content; ?>
   </article>
 </div>
