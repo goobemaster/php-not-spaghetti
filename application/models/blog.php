@@ -37,4 +37,8 @@ class Blog extends CI_Model {
     return $this->db->get_where('blog', array('published' => '1'))->result();
   }
 
+  function get_by_id($id) {
+    return $this->db->get_where('blog', array('id' => $id))->result();
+  }
+
 }

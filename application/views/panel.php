@@ -1,4 +1,5 @@
   <nav>
+    <div id="posts">
     <?php
       if (empty($blog_list)) {
         echo '<p>There are no blog entries yet.</p>';
@@ -15,4 +16,5 @@
         }
       }
     ?>
+    </div>
   </nav>

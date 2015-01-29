@@ -11,7 +11,7 @@
     </dl>
   </aside>
   <article>
-    <h1><?php echo $blog->title; ?></h1>
+    <h1><img src="media/images/post-icon.png" alt="<?php $blog->title; ?>" title="<?php $blog->title; ?>"/><?php echo $blog->title; ?></h1>
     <?php echo $blog->content; ?>
   </article>
 </div>

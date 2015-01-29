@@ -10,6 +10,10 @@ nav h1 {
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
 }
 
+nav h1:not(:first-child) {
+  padding-top:15px;
+}
+
 nav h2 {
   font-size:18px;
   margin:0px;
@@ -18,12 +22,19 @@ nav h2 {
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
 }
 
-nav p {
+nav #posts p {
   padding-left:15px;
   font-size:14px;
 }
 
-nav .break {
+nav #posts .break {
   border-bottom:1px solid black;
   margin-bottom:12px;
+}
+
+nav #posts h1 img {
+  margin:0px;
+  padding:0px;
+  padding-right:8px;
+  vertical-align:top;
 }

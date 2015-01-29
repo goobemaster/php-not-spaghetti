@@ -1,7 +1,7 @@
-  <div id="content">
-    <?php if (empty($featured)) {
-      echo '<p>There are no featured blog entries at this time.</p>';
-    } else {
-      foreach ($featured as $blog) $this->view('blog', array('blog' => $blog, 'author' => $author, 'author_email' => $author_email));
-    } ?>
-  </div>
+<div id="content">
+  <?php if (empty($post)) {
+    echo '<p>This post is unpublished currently.</p>';
+  } else {
+    $this->view('blog', array('blog' => $post[0], 'author' => $author, 'author_email' => $author_email));
+  } ?>
+</div>

@@ -66,6 +66,13 @@
   color:black;
 }
 
+.blog article h1 img {
+  margin:0px;
+  padding:0px;
+  padding-right:8px;
+  vertical-align:middle;
+}
+
 .blog article h2 {
   font-size:27px;
   line-height:64px;

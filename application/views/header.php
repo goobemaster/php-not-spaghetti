@@ -6,7 +6,7 @@
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <meta name="author" content="<?php echo $author; ?>">
-  <base href="<?php echo $base_url; ?>" target="_blank">
+  <base href="<?php echo $base_url; ?>" target="_self">
   <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
@@ -38,4 +38,4 @@
 
 <div class="page">
 
-  <header><h1><?php echo $title; ?></h1></header>
+  <header><a href="home/"><h1><img src="media/images/logo.png" alt="Logo" title="Logo"/><?php echo $title; ?></h1></a></header>

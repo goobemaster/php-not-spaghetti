@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_Controller {
+  public $meta_data, $content_data, $panel_data;
 
-	public function index()
-	{
+  public function __construct() {
+    parent::__construct();
+
     $this->load->helper('url');
     $this->load->model('Configuration', '', TRUE);
     $this->load->model('Blog', '', TRUE);
@@ -29,23 +31,39 @@ class Home extends CI_Controller {
       }
     }
 
-    $meta_data = array('title' => $this->Configuration->get('title'),
-                       'lang' => $this->Configuration->get('lang'),
-                       'keywords' => $this->Configuration->get('keywords'),
-                       'description' => $this->Configuration->get('description'),
-                       'author' => $this->Configuration->get('author'),
-                       'base_url' => base_url(),
-                       'style_override' => $style_override);
+    $this->meta_data = array('title' => $this->Configuration->get('title'),
+                             'lang' => $this->Configuration->get('lang'),
+                             'keywords' => $this->Configuration->get('keywords'),
+                             'description' => $this->Configuration->get('description'),
+                             'author' => $this->Configuration->get('author'),
+                             'base_url' => base_url(),
+                             'style_override' => $style_override);
 
-    $content_data = array('featured' => $this->Blog->get_all_featured(),
-                          'author' => $this->Configuration->get('author'),
-                          'author_email' => $this->Configuration->get('author_email'));
+    $this->content_data = array('featured' => $this->Blog->get_all_featured(),
+                                'author' => $this->Configuration->get('author'),
+                                'author_email' => $this->Configuration->get('author_email'));
 
-    $panel_data = array('blog_list' => $this->Blog->blog_list());
+    $this->panel_data = array('blog_list' => $this->Blog->blog_list());
+  }
 
-		$this->load->view('header', $meta_data);
-    $this->load->view('panel', $panel_data);
-    $this->load->view('content', $content_data);
-    $this->load->view('footer', $meta_data);
+	public function index()	{
+		$this->load->view('header', $this->meta_data);
+    $this->load->view('panel', $this->panel_data);
+    $this->load->view('content_featured', $this->content_data);
+    $this->load->view('footer', $this->meta_data);
 	}
+
+  public function post($id) {
+    $post_id = false;
+    preg_match('/^(\d+)/', $id, $post_id);
+
+    $this->content_data = array('post' => $this->Blog->get_by_id($post_id[0]),
+                                'author' => $this->Configuration->get('author'),
+                                'author_email' => $this->Configuration->get('author_email'));
+
+    $this->load->view('header', $this->meta_data);
+    $this->load->view('panel', $this->panel_data);
+    $this->load->view('content', $this->content_data);
+    $this->load->view('footer', $this->meta_data);
+  }
 }
