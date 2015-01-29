@@ -1,0 +1,24 @@
+nav {
+  font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+nav h1 {
+  font-size:28px;
+  margin:0px;
+  text-transform:uppercase;
+  color:black;
+  font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+nav h2 {
+  font-size:18px;
+  margin:0px;
+  text-transform:uppercase;
+  color:black;
+  font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+nav p {
+  padding-left:15px;
+}
+

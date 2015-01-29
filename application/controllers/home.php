@@ -41,8 +41,10 @@ class Home extends CI_Controller {
                           'author' => $this->Configuration->get('author'),
                           'author_email' => $this->Configuration->get('author_email'));
 
+    $panel_data = array('blog_list' => $this->Blog->blog_list());
+
 		$this->load->view('header', $meta_data);
-    $this->load->view('panel');
+    $this->load->view('panel', $panel_data);
     $this->load->view('content', $content_data);
     $this->load->view('footer', $meta_data);
 	}
