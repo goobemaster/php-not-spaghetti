@@ -1,14 +1,14 @@
-#page {
+.page {
   width:100%;
-  position:relative;
-  min-height:1px;
-  padding-right:15px;
-  padding-left:15px;
-  padding-top:15px;
+  padding:15px;
+  padding-bottom:0px;
   box-sizing:border-box;
+  position:relative;
+  height:auto;
+  overflow:hidden;
 }
 
-#header {
+header {
   background-color:black;
   color:white;
   padding:15px;
@@ -17,7 +17,7 @@
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
 }
 
-#header h1 {
+header h1 {
   text-align:center;
   font-size:36px;
   margin-top:20px;
@@ -25,19 +25,22 @@
   line-height:1.1;
 }
 
-#panel {
+nav {
   background-color:#eeeeee;
-  height:300px;
   width:200px;
   float:left;
   padding:15px;
   line-height:30px;
+  position:absolute;
+  height:100%;
+  overflow:hidden;
 }
 
 #content {
-  width:500px;
-  float:left;
   padding:15px;
+  margin-left:230px;
+  height:100%;
+  overflow:hidden;
 }
 
 #footer {

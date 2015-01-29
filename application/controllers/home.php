@@ -6,6 +6,7 @@ class Home extends CI_Controller {
 	{
     $this->load->helper('url');
     $this->load->model('Configuration', '', TRUE);
+    $this->load->model('Blog', '', TRUE);
 
     $style_override = array('apply' => false,
                             'header_background' => $this->Configuration->get('header_background'),
@@ -16,7 +17,10 @@ class Home extends CI_Controller {
                             'page_background' => $this->Configuration->get('page_background'),
                             'footer_background' => $this->Configuration->get('footer_background'),
                             'footer_font' => $this->Configuration->get('footer_font'),
-                            'footer_font_size' => $this->Configuration->get('footer_font_size'));
+                            'footer_font_size' => $this->Configuration->get('footer_font_size'),
+                            'aside_background' => $this->Configuration->get('aside_background'),
+                            'aside_font' => $this->Configuration->get('aside_font'),
+                            'aside_font_size' => $this->Configuration->get('aside_font_size'));
 
     foreach ($style_override as $key => $value) {
       if ($value) {
@@ -33,9 +37,13 @@ class Home extends CI_Controller {
                        'base_url' => base_url(),
                        'style_override' => $style_override);
 
+    $content_data = array('featured' => $this->Blog->get_all_featured(),
+                          'author' => $this->Configuration->get('author'),
+                          'author_email' => $this->Configuration->get('author_email'));
+
 		$this->load->view('header', $meta_data);
     $this->load->view('panel');
-    $this->load->view('content');
+    $this->load->view('content', $content_data);
     $this->load->view('footer', $meta_data);
 	}
 }
