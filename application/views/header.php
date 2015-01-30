@@ -10,6 +10,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
+  <link rel="license" href="https://github.com/goobemaster/php-simple-blog/blob/master/LICENSE">
+  <link rel="help" href="https://github.com/goobemaster/php-simple-blog">
+
+  <link rel="shortcut icon" href="media/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="media/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/blog_layout.css">
   <link rel="stylesheet" href="css/blog_entry.css">
