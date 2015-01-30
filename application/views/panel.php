@@ -1,3 +1,9 @@
+<?php
+  function link_to_post($id, $title) {
+    return 'home/post/' . $id . '-' . url_title($title);
+  }
+?>
+
   <nav>
     <div id="posts">
     <?php
@@ -18,9 +24,11 @@
     ?>
     </div>
 
+    <div id="search">
     <h1><img src="media/images/search-icon.png" alt="Search" title="Search the blog"/>Search</h1><div class="break"></div>
     <form action="home/search" method="GET">
       <input type="text" value="" name="keyword" id="keyword"/>
       <input type="submit" value="Go"/>
     </form>
+    </div>
   </nav>

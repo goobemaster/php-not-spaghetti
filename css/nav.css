@@ -44,9 +44,10 @@ nav #posts h1 img {
   vertical-align:top;
 }
 
-nav .box {
-  background-color:white;
-  margin:0px;
-  padding:0px;
-  width:100%;
+nav #search input:first-child {
+  width:140px;
+}
+
+nav #search h1 {
+  padding-top:15px;
 }
