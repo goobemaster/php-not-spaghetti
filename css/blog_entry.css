@@ -3,6 +3,21 @@
   width:auto;
 }
 
+.tag {
+  background-color:black;
+  border:1px solid black;
+  border-radius:8px;
+  color:white;
+  width:auto;
+  padding:4px;
+  margin-right:4px;
+  display: inline-block
+}
+
+.tags .tag:not(:last-child) {
+  margin-bottom:4px;
+}
+
 .blog aside {
   display:block;
   float:left;
@@ -40,13 +55,16 @@
   padding-left:12px;
 }
 
+.blog aside dl dt {
+  margin-bottom:4px;
+}
+
 .blog article {
   display:block;
   font-size:14px;
   line-height:22px;
   margin:0 0 0px 90px;
   padding:0px 15px 15px 30px;
-  /*min-height:300px;*/
   position:relative;
   color:black;
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;

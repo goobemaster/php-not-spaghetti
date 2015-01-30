@@ -8,6 +8,9 @@
       <?php if ($blog->created != $blog->modified) { ?>
       <dt>Modified:</dt><dd><?php echo strftime('%x %X', strtotime($blog->modified)); ?></dd>
       <?php } ?>
+      <?php if ($blog->tags) { ?>
+      <dt>Tags:</dt><dd class="tags"><?php foreach(explode(',', $blog->tags) as $tag) echo '<div class="tag">' . $tag . '</div>'; ?></dd>
+      <?php } ?>
     </dl>
   </aside>
   <article>

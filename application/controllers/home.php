@@ -23,7 +23,9 @@ class Home extends CI_Controller {
                             'aside_background' => $this->Configuration->get('aside_background'),
                             'aside_font' => $this->Configuration->get('aside_font'),
                             'aside_font_size' => $this->Configuration->get('aside_font_size'),
-                            'panel_font' => $this->Configuration->get('panel_font'));
+                            'panel_font' => $this->Configuration->get('panel_font'),
+                            'tag_background' => $this->Configuration->get('tag_background'),
+                            'tag_color' => $this->Configuration->get('tag_color'));
 
     foreach ($style_override as $key => $value) {
       if ($value) {
