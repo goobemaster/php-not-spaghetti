@@ -76,7 +76,7 @@
       <file leaf-file-name="result.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/result.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="14" selection-start="269" selection-end="269" vertical-scroll-proportion="0.058027077" vertical-offset="0" max-vertical-offset="1034">
+            <state line="6" column="10" selection-start="289" selection-end="289" vertical-scroll-proportion="0.08704062" vertical-offset="0" max-vertical-offset="1034">
               <folding />
             </state>
           </provider>
@@ -573,12 +573,12 @@
       <workItem from="1422445541544" duration="8310000" />
       <workItem from="1422455836029" duration="5752000" />
       <workItem from="1422538711672" duration="6846000" />
-      <workItem from="1422626845290" duration="5939000" />
+      <workItem from="1422626845290" duration="6266000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26847000" />
+    <option name="totallyTimeSpent" value="27174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="22" width="1920" height="1178" extended-state="6" />
@@ -970,7 +970,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/result.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="269" selection-end="269" vertical-scroll-proportion="0.058027077" vertical-offset="0" max-vertical-offset="1034">
+        <state line="6" column="10" selection-start="289" selection-end="289" vertical-scroll-proportion="0.08704062" vertical-offset="0" max-vertical-offset="1034">
           <folding />
         </state>
       </provider>
