@@ -41,4 +41,14 @@ class Blog extends CI_Model {
     return $this->db->get_where('blog', array('id' => $id))->result();
   }
 
+  function get_by_keyword($keyword) {
+    if ($keyword != '') {
+      $this->db->like('content', $keyword);
+      $this->db->or_like('title', $keyword);
+      $this->db->distinct();
+      return $this->db->get('blog')->result();
+    } else {
+      return null;
+    }
+  }
 }

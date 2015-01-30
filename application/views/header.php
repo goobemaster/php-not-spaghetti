@@ -30,6 +30,7 @@
     <?php echo $style_override['aside_background'] ? '.blog aside time { background-image:linear-gradient(60deg, ' . $style_override['aside_background'] . ', ' . $style_override['aside_background'] . ');}' : ''; ?>
     <?php echo $style_override['aside_font'] ? '.blog aside { font-family:' . $style_override['aside_font'] . ';}' : ''; ?>
     <?php echo $style_override['aside_font_size'] ? '.blog aside { font-size:' . $style_override['aside_font_size'] . ';}' : ''; ?>
+    <?php echo $style_override['panel_font'] ? 'nav, nav h1, nav h2 { font-family:' . $style_override['panel_font'] . ';}' : ''; ?>
   </style>
   <?php } ?>
 </head>

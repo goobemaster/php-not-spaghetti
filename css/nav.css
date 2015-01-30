@@ -22,12 +22,17 @@ nav h2 {
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
 }
 
+nav h1 img {
+  width:24px;
+  height:24px;
+}
+
 nav #posts p {
   padding-left:15px;
   font-size:14px;
 }
 
-nav #posts .break {
+nav .break {
   border-bottom:1px solid black;
   margin-bottom:12px;
 }
@@ -37,4 +42,11 @@ nav #posts h1 img {
   padding:0px;
   padding-right:8px;
   vertical-align:top;
+}
+
+nav .box {
+  background-color:white;
+  margin:0px;
+  padding:0px;
+  width:100%;
 }

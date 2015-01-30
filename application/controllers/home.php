@@ -22,7 +22,8 @@ class Home extends CI_Controller {
                             'footer_font_size' => $this->Configuration->get('footer_font_size'),
                             'aside_background' => $this->Configuration->get('aside_background'),
                             'aside_font' => $this->Configuration->get('aside_font'),
-                            'aside_font_size' => $this->Configuration->get('aside_font_size'));
+                            'aside_font_size' => $this->Configuration->get('aside_font_size'),
+                            'panel_font' => $this->Configuration->get('panel_font'));
 
     foreach ($style_override as $key => $value) {
       if ($value) {
@@ -64,6 +65,15 @@ class Home extends CI_Controller {
     $this->load->view('header', $this->meta_data);
     $this->load->view('panel', $this->panel_data);
     $this->load->view('content', $this->content_data);
+    $this->load->view('footer', $this->meta_data);
+  }
+
+  public function search() {
+    $this->content_data = array('results' => $this->Blog->get_by_keyword($_GET['keyword']));
+
+    $this->load->view('header', $this->meta_data);
+    $this->load->view('panel', $this->panel_data);
+    $this->load->view('search_results', $this->content_data);
     $this->load->view('footer', $this->meta_data);
   }
 }
