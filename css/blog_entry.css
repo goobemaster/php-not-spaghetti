@@ -8,10 +8,11 @@
   border:1px solid black;
   border-radius:8px;
   color:white;
-  width:auto;
   padding:4px;
   margin-right:4px;
-  display: inline-block
+  display:inline-block;
+  font-size:12px;
+  line-height:12px;
 }
 
 .tags .tag:not(:last-child) {

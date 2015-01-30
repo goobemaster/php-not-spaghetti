@@ -46,7 +46,9 @@ class Home extends CI_Controller {
                                 'author' => $this->Configuration->get('author'),
                                 'author_email' => $this->Configuration->get('author_email'));
 
-    $this->panel_data = array('blog_list' => $this->Blog->blog_list());
+    $this->panel_data = array('blog_list' => $this->Blog->blog_list(),
+                              'tag_list' => $this->Blog->get_most_used_tags(),
+                              'tag_size_max' => $this->Configuration->get('tag_size_max'));
   }
 
 	public function index()	{

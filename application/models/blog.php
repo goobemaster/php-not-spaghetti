@@ -33,7 +33,8 @@ class Blog extends CI_Model {
     return $this->db->get_where('blog', array('featured' => '1'))->result();
   }
 
-  function get_all_published() {
+  function get_all_published($fields = '*') {
+    if ($fields != '*') $this->db->select($fields);
     return $this->db->get_where('blog', array('published' => '1'))->result();
   }
 
@@ -50,5 +51,13 @@ class Blog extends CI_Model {
     } else {
       return null;
     }
+  }
+
+  function get_most_used_tags($limit = 15) {
+    $all_tags = array();
+    foreach ($this->get_all_published('tags') as $post) $all_tags = array_merge(explode(',', $post->tags), $all_tags);
+    $tags = array_count_values($all_tags);
+    arsort($tags, SORT_NUMERIC);
+    return array_slice($tags, 0, $limit);
   }
 }

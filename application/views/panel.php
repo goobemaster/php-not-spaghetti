@@ -2,6 +2,11 @@
   function link_to_post($id, $title) {
     return 'home/post/' . $id . '-' . url_title($title);
   }
+
+  function tag_weight($count, $max_size = 24) {
+    $weight = 12 + $count;
+    return $weight <= 24 ? $weight : $max_size;
+  }
 ?>
 
   <nav>
@@ -25,10 +30,15 @@
     </div>
 
     <div id="search">
-    <h1><img src="media/images/search-icon.png" alt="Search" title="Search the blog"/>Search</h1><div class="break"></div>
-    <form action="home/search" method="GET">
-      <input type="text" value="" name="keyword" id="keyword"/>
-      <input type="submit" value="Go"/>
-    </form>
+      <h1><img src="media/images/search-icon.png" alt="Search" title="Search the blog"/>Search</h1><div class="break"></div>
+      <form action="home/search" method="GET">
+        <input type="text" value="" name="keyword" id="keyword"/>
+        <input type="submit" value="Go"/>
+      </form>
+    </div>
+
+    <div id="tags" class="tags">
+      <h1><img src="media/images/tags-icon.png" alt="Most used tags" title="Most used tags"/>Tags</h1><div class="break"></div>
+      <?php foreach ($tag_list as $tag => $count) { $weight = tag_weight($count, $tag_size_max); echo '<div class="tag" style="font-size:' . $weight . 'px;line-height:' . $weight . 'px;">' . $tag . '</div>'; } ?>
     </div>
   </nav>
