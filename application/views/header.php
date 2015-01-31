@@ -38,6 +38,7 @@
     <?php echo $style_override['panel_font'] ? 'nav, nav h1, nav h2 { font-family:' . $style_override['panel_font'] . ';}' : ''; ?>
     <?php echo $style_override['tag_background'] ? '.tags .tag { background-color:' . $style_override['tag_background'] . '; border-color:' . $style_override['tag_background'] . ';}' : ''; ?>
     <?php echo $style_override['tag_color'] ? '.tag { color:' . $style_override['tag_color'] . ';}' : ''; ?>
+    <?php echo $style_override['link_color'] ? 'a, a:visited { color:' . $style_override['link_color'] . ';}' : ''; ?>
   </style>
   <?php } ?>
 </head>

@@ -25,7 +25,9 @@ class Home extends CI_Controller {
                             'aside_font_size' => $this->Configuration->get('aside_font_size'),
                             'panel_font' => $this->Configuration->get('panel_font'),
                             'tag_background' => $this->Configuration->get('tag_background'),
-                            'tag_color' => $this->Configuration->get('tag_color'));
+                            'tag_color' => $this->Configuration->get('tag_color'),
+                            'link_color' => $this->Configuration->get('link_color'));
+
 
     foreach ($style_override as $key => $value) {
       if ($value) {
@@ -75,7 +77,7 @@ class Home extends CI_Controller {
   }
 
   public function search() {
-    $this->content_data = array('results' => $this->Blog->get_by_keyword($_GET['keyword'], isset($_GET['tag'])));
+    $this->content_data = array('results' => $this->Blog->get_by_keyword($_GET['keyword'], isset($_GET['tags'])));
 
     $this->load->view('header', $this->meta_data);
     $this->load->view('panel', $this->panel_data);

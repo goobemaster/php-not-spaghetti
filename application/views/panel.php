@@ -10,7 +10,7 @@
 
   function tag_list($tags, $outer_element = 'dd') {
     $list = '<' . $outer_element . ' class="tags">';
-    foreach(explode(',', $tags) as $tag) $list = $list . '<div class="tag">' . $tag . '</div>';
+    foreach(explode(',', $tags) as $tag) $list = $list . '<div class="tag"><a href="home/search?keyword=' . urlencode($tag) . '&tags">' . $tag . '</a></div>';
     return $list . '</' . $outer_element . '>';
   }
 ?>
