@@ -31,12 +31,12 @@
     <?php echo $style_override['footer_background'] ? '#footer { background-color:' . $style_override['footer_background'] . ';}' : ''; ?>
     <?php echo $style_override['footer_font'] ? '#footer h1, #footer h2 { font-family:' . $style_override['footer_font'] . ';}' : ''; ?>
     <?php echo $style_override['footer_font_size'] ? '#footer h1, #footer h2 { font-size:' . $style_override['footer_font_size'] . ';}' : ''; ?>
-    <?php echo $style_override['aside_background'] ? '.blog aside { border:1px solid ' . $style_override['aside_background'] . ';}' : ''; ?>
-    <?php echo $style_override['aside_background'] ? '.blog aside time { background-image:linear-gradient(60deg, ' . $style_override['aside_background'] . ', ' . $style_override['aside_background'] . ');}' : ''; ?>
+    <?php echo $style_override['aside_background'] ? '.blog aside div { border:1px solid ' . $style_override['aside_background'] . ';}' : ''; ?>
+    <?php echo $style_override['aside_background'] ? '.blog aside div time { background-image:linear-gradient(60deg, ' . $style_override['aside_background'] . ', ' . $style_override['aside_background'] . ');}' : ''; ?>
     <?php echo $style_override['aside_font'] ? '.blog aside { font-family:' . $style_override['aside_font'] . ';}' : ''; ?>
     <?php echo $style_override['aside_font_size'] ? '.blog aside { font-size:' . $style_override['aside_font_size'] . ';}' : ''; ?>
     <?php echo $style_override['panel_font'] ? 'nav, nav h1, nav h2 { font-family:' . $style_override['panel_font'] . ';}' : ''; ?>
-    <?php echo $style_override['tag_background'] ? '.tag { background-color:' . $style_override['tag_background'] . '; border-color:' . $style_override['tag_background'] . ';}' : ''; ?>
+    <?php echo $style_override['tag_background'] ? '.tags .tag { background-color:' . $style_override['tag_background'] . '; border-color:' . $style_override['tag_background'] . ';}' : ''; ?>
     <?php echo $style_override['tag_color'] ? '.tag { color:' . $style_override['tag_color'] . ';}' : ''; ?>
   </style>
   <?php } ?>

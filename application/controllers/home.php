@@ -66,6 +66,8 @@ class Home extends CI_Controller {
                                 'author' => $this->Configuration->get('author'),
                                 'author_email' => $this->Configuration->get('author_email'));
 
+    if (!empty($this->content_data['post']) && $this->content_data['post'][0]->published) $this->Blog->update_hits($post_id[0], $this->content_data['post'][0]->hits + 1);
+
     $this->load->view('header', $this->meta_data);
     $this->load->view('panel', $this->panel_data);
     $this->load->view('content', $this->content_data);

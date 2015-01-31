@@ -60,4 +60,9 @@ class Blog extends CI_Model {
     arsort($tags, SORT_NUMERIC);
     return array_slice($tags, 0, $limit);
   }
+
+  function update_hits($id, $hits) {
+    $this->db->where('id', $id);
+    $this->db->update('blog', array('hits' => $hits));
+  }
 }

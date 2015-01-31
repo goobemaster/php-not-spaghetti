@@ -1,9 +1,10 @@
 .blog {
   margin-bottom:10px;
   width:auto;
+  display:block;
 }
 
-.tag {
+.tags .tag {
   background-color:black;
   border:1px solid black;
   border-radius:8px;
@@ -20,17 +21,23 @@
 }
 
 .blog aside {
-  display:block;
-  float:left;
-  position:absolute;
-  width:103px;
-  border:1px solid black;
+  display:table-cell;
+  vertical-align:top;
+  height:auto;
+  width:118px;
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+.blog aside div {
+  display:block;
+  vertical-align:top;
+  box-sizing:border-box;
+  border:1px solid black;
 }
 
 .blog aside time {
   display:block;
-  width:98px;
+  width:113px;
   height:45px;
   line-height:20px;
   margin:0 0 15px 0px;
@@ -61,11 +68,11 @@
 }
 
 .blog article {
-  display:block;
+  display:table-cell;
   font-size:14px;
   line-height:22px;
   margin:0 0 0px 90px;
-  padding:0px 15px 15px 30px;
+  padding:0px 0px 15px 15px;
   position:relative;
   color:black;
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;

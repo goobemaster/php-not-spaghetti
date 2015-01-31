@@ -6,7 +6,7 @@ nav {
   line-height:30px;
   margin-left:15px;
   display:table-cell;
-  height:inherit;
+  vertical-align:top;
 }
 
 nav h1 {
@@ -39,6 +39,10 @@ nav h1 img {
   margin:0px;
   padding:0px;
   padding-right:8px;
+  vertical-align:top;
+}
+
+nav #posts {
   vertical-align:top;
 }
 
