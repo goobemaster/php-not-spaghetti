@@ -7,20 +7,19 @@ p {
 }
 
 .page {
-  width:100%;
-  padding:15px;
-  padding-bottom:0px;
-  box-sizing:border-box;
-  position:relative;
-  height:auto;
-  overflow:hidden;
+  padding:0px;
+  margin:0px;
+  margin-left:15px;
+  margin-right:15px;
+  height:100%;
+  display:block;
 }
 
 header {
   background-color:black;
   color:white;
-  padding:15px;
-  box-sizing:border-box;
+  margin-top:15px;
+  margin-bottom:0px;
   font-size:15px;
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
 }
@@ -28,8 +27,8 @@ header {
 header h1 {
   text-align:center;
   font-size:36px;
-  margin-top:20px;
-  margin-bottom:10px;
+  padding-top:20px;
+  padding-bottom:10px;
   line-height:1.1;
 }
 
@@ -45,31 +44,18 @@ header a {
   color:inherit;
 }
 
-nav {
-  background-color:#eeeeee;
-  width:200px;
-  float:left;
-  padding:15px;
-  line-height:30px;
-  position:absolute;
-  height:100%;
-  overflow:hidden;
-}
-
 #content {
   padding:15px;
   margin-left:230px;
-  height:100%;
-  overflow:hidden;
-  min-height:500px;
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+  display:table-cell;
+  height:inherit;
 }
 
 #footer {
   background-color:black;
   color:white;
-  clear:both;
-  padding:5px;
+  margin-bottom:15px;
   text-align:center;
   line-height:22px;
 }

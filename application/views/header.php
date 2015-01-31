@@ -44,6 +44,6 @@
 
 <body>
 
-<div class="page">
+<div class="page"><header><a href="home/"><h1><img src="media/images/logo.png" alt="Logo" title="Logo"/><?php echo $title; ?></h1></a></header></div>
 
-  <header><a href="home/"><h1><img src="media/images/logo.png" alt="Logo" title="Logo"/><?php echo $title; ?></h1></a></header>
+<div class="page">

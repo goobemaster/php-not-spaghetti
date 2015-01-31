@@ -1,5 +1,12 @@
 nav {
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+  background-color:#eeeeee;
+  width:200px;
+  padding:15px;
+  line-height:30px;
+  margin-left:15px;
+  display:table-cell;
+  height:inherit;
 }
 
 nav h1 {
