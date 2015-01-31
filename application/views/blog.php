@@ -11,7 +11,7 @@
       <?php } ?>
       <dt>Hits:</dt><dd><?php echo $blog->hits; ?></dd>
       <?php if ($blog->tags) { ?>
-      <dt>Tags:</dt><dd class="tags"><?php foreach(explode(',', $blog->tags) as $tag) echo '<div class="tag">' . $tag . '</div>'; ?></dd>
+      <dt>Tags:</dt><?php echo tag_list($blog->tags); ?>
       <?php } ?>
     </dl>
     </div>

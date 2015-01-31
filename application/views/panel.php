@@ -7,6 +7,12 @@
     $weight = 12 + $count;
     return $weight <= 24 ? $weight : $max_size;
   }
+
+  function tag_list($tags, $outer_element = 'dd') {
+    $list = '<' . $outer_element . ' class="tags">';
+    foreach(explode(',', $tags) as $tag) $list = $list . '<div class="tag">' . $tag . '</div>';
+    return $list . '</' . $outer_element . '>';
+  }
 ?>
 
   <nav>
@@ -39,6 +45,6 @@
 
     <div id="tags" class="tags">
       <h1><img src="media/images/tags-icon.png" alt="Most used tags" title="Most used tags"/>Tags</h1><div class="break"></div>
-      <?php foreach ($tag_list as $tag => $count) { $weight = tag_weight($count, $tag_size_max); echo '<div class="tag" style="font-size:' . $weight . 'px;line-height:' . $weight . 'px;">' . $tag . '</div>'; } ?>
+      <?php foreach ($tag_list as $tag => $count) { $weight = tag_weight($count, $tag_size_max); echo '<div class="tag" style="font-size:' . $weight . 'px;line-height:' . $weight . 'px;"><a href="home/search?keyword=' . urlencode($tag) . '&tags">' . $tag . '</a></div>'; } ?>
     </div>
   </nav>

@@ -75,7 +75,7 @@ class Home extends CI_Controller {
   }
 
   public function search() {
-    $this->content_data = array('results' => $this->Blog->get_by_keyword($_GET['keyword']));
+    $this->content_data = array('results' => $this->Blog->get_by_keyword($_GET['keyword'], isset($_GET['tag'])));
 
     $this->load->view('header', $this->meta_data);
     $this->load->view('panel', $this->panel_data);

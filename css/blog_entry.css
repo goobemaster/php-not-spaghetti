@@ -20,6 +20,13 @@
   margin-bottom:4px;
 }
 
+.tag a {
+  text-decoration:none;
+  font-family:inherit;
+  font-size:inherit;
+  color:inherit;
+}
+
 .blog aside {
   display:table-cell;
   vertical-align:top;

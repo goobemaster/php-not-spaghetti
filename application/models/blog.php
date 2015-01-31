@@ -8,10 +8,14 @@ function date_compare($a, $b)
 }
 
 class Blog extends CI_Model {
+  public $id = '';
   public $title = '';
   public $created = '';
   public $modified = '';
   public $published = '';
+  public $featured = '';
+  public $tags = '';
+  public $hits = '';
   public $content = '';
 
   function __construct()
@@ -42,11 +46,25 @@ class Blog extends CI_Model {
     return $this->db->get_where('blog', array('id' => $id))->result();
   }
 
-  function get_by_keyword($keyword) {
+  function get_by_keyword($keyword, $tag = false) {
     if ($keyword != '') {
-      $this->db->like('content', $keyword);
-      $this->db->or_like('title', $keyword);
-      $this->db->distinct();
+      if ($tag) {
+        $this->db->like('tags', $keyword . ',', 'after');
+        $this->db->or_like('tags', ',' . $keyword . ',', 'both');
+        $this->db->or_like('tags', ',' . $keyword, 'before');
+        $this->db->or_like('tags', $keyword, 'none');
+      } else {
+        $this->db->like('content', $keyword, 'before');
+        $this->db->or_like('content', $keyword, 'after');
+        $this->db->or_like('content', $keyword, 'both');
+        $this->db->or_like('content', $keyword, 'none');
+
+        $this->db->like('title', $keyword, 'before');
+        $this->db->or_like('title', $keyword, 'after');
+        $this->db->or_like('title', $keyword, 'both');
+        $this->db->or_like('title', $keyword, 'none');
+        $this->db->distinct();
+      }
       return $this->db->get('blog')->result();
     } else {
       return null;
