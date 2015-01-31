@@ -47,7 +47,7 @@ class Blog extends CI_Model {
   }
 
   function get_by_keyword($keyword, $tag = false) {
-    if (isset($keyword)) {
+    if (isset($keyword) && $keyword != '') {
       if ($tag) {
         $this->db->like('tags', $keyword);
       } else {
