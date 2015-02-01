@@ -56,10 +56,10 @@ header a, header a:hover, footer a, footer a:hover {
 
 #content {
   padding:15px;
-  margin-left:230px;
   font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
   display:table-cell;
   height:inherit;
+  width:100%;
 }
 
 #footer {

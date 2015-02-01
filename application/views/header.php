@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="css/nav.css">
   <?php if ($interface == 'backend') { ?>
   <link rel="stylesheet" href="css/admin_login.css">
+  <link rel="stylesheet" href="css/admin_panel.css">
+  <link rel="stylesheet" href="css/admin_create.css">
   <?php } ?>
 
   <?php if ($style_override['apply']) { ?>
@@ -53,6 +55,7 @@
       js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+  <?php if ($ckeditor) { echo '<script src="js/ckeditor/ckeditor.js"></script>'; } ?>
 </head>
 
 <body>

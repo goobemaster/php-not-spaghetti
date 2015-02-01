@@ -1,0 +1,28 @@
+#create {
+  width:100%;
+  display:block;
+  margin-bottom:10px;
+}
+
+#create .cell {
+  width:75%;
+  display:inline-block;
+  margin-bottom:6px;
+}
+
+#create .label {
+  width:10%;
+  display:inline-block;
+  text-align:right;
+  padding-right:6px;
+}
+
+#create .tags {
+  width:100%;
+  font-size:14px;
+}
+
+#create .title {
+  width:100%;
+  font-size:35px;
+}
