@@ -21,6 +21,7 @@ class Admin extends CI_Controller {
                              'author' => $this->Configuration->get('author'),
                              'base_url' => base_url(),
                              'interface' => 'backend',
+                             'ckeditor' => false,
                              'style_override' => $style_override);
 
     $this->panel_data = array();

@@ -20,6 +20,7 @@ class Home extends CI_Controller {
                              'author' => $this->Configuration->get('author'),
                              'base_url' => base_url(),
                              'interface' => 'frontend',
+                             'ckeditor' => false,
                              'style_override' => $style_override);
 
     $this->content_data = array('featured' => $this->Blog->get_all_featured(),
