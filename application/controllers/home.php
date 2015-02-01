@@ -7,6 +7,7 @@ class Home extends CI_Controller {
     parent::__construct();
 
     $this->load->helper('url');
+    $this->load->helper('common');
     $this->load->model('Configuration', '', TRUE);
     $this->load->model('Blog', '', TRUE);
 

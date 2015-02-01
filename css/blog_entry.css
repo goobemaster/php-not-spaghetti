@@ -42,6 +42,10 @@
   border:1px solid black;
 }
 
+.blog aside dd div {
+  border:0px;
+}
+
 .blog aside time {
   display:block;
   width:113px;
@@ -110,4 +114,12 @@
   font-size:27px;
   line-height:64px;
   padding:0px 0px 0px 0px;
+}
+
+div.fb-share-button {
+  width:55px;
+}
+
+dd.twitter {
+  max-width:100px;
 }

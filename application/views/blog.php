@@ -13,6 +13,7 @@
       <?php if ($blog->tags) { ?>
       <dt>Tags:</dt><?php echo tag_list($blog->tags); ?>
       <?php } ?>
+      <dt>Social:</dt><dd><?php echo fb_share_button(link_to_post($blog->id, $blog->title)); ?></dd><dd class="twitter"><?php echo twitter_share_button(link_to_post($blog->id, $blog->title)); ?></dd>
     </dl>
     </div>
   </aside>
