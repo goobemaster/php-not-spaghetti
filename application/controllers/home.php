@@ -11,31 +11,7 @@ class Home extends CI_Controller {
     $this->load->model('Configuration', '', TRUE);
     $this->load->model('Blog', '', TRUE);
 
-    $style_override = array('apply' => false,
-                            'header_background' => $this->Configuration->get('header_background'),
-                            'header_font' => $this->Configuration->get('header_font'),
-                            'header_font_size' => $this->Configuration->get('header_font_size'),
-                            'panel_background' => $this->Configuration->get('panel_background'),
-                            'content_background' => $this->Configuration->get('content_background'),
-                            'page_background' => $this->Configuration->get('page_background'),
-                            'footer_background' => $this->Configuration->get('footer_background'),
-                            'footer_font' => $this->Configuration->get('footer_font'),
-                            'footer_font_size' => $this->Configuration->get('footer_font_size'),
-                            'aside_background' => $this->Configuration->get('aside_background'),
-                            'aside_font' => $this->Configuration->get('aside_font'),
-                            'aside_font_size' => $this->Configuration->get('aside_font_size'),
-                            'panel_font' => $this->Configuration->get('panel_font'),
-                            'tag_background' => $this->Configuration->get('tag_background'),
-                            'tag_color' => $this->Configuration->get('tag_color'),
-                            'link_color' => $this->Configuration->get('link_color'));
-
-
-    foreach ($style_override as $key => $value) {
-      if ($value) {
-        $style_override['apply'] = true;
-        break;
-      }
-    }
+    $style_override = query_style_overrides($this->Configuration);
 
     $this->meta_data = array('title' => $this->Configuration->get('title'),
                              'lang' => $this->Configuration->get('lang'),
@@ -43,6 +19,7 @@ class Home extends CI_Controller {
                              'description' => $this->Configuration->get('description'),
                              'author' => $this->Configuration->get('author'),
                              'base_url' => base_url(),
+                             'interface' => 'frontend',
                              'style_override' => $style_override);
 
     $this->content_data = array('featured' => $this->Blog->get_all_featured(),

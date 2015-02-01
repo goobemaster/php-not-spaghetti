@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="css/blog_layout.css">
   <link rel="stylesheet" href="css/blog_entry.css">
   <link rel="stylesheet" href="css/nav.css">
+  <?php if ($interface == 'backend') { ?>
+  <link rel="stylesheet" href="css/admin_login.css">
+  <?php } ?>
 
   <?php if ($style_override['apply']) { ?>
   <style type="text/css">

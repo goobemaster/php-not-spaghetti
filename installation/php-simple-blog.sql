@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2015 at 01:32 AM
+-- Generation Time: Feb 01, 2015 at 06:13 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -98,6 +98,29 @@ INSERT INTO `configuration` (`id`, `key`, `value`) VALUES
 (21, 'tag_color', 'white'),
 (22, 'tag_size_max', '24'),
 (23, 'link_color', 'Sienna');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) NOT NULL,
+  `password` text NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `admin`) VALUES
+(1, 'admin', 'YWRtaW4=', 'black_hole@mailinator.com', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
