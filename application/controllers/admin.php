@@ -47,6 +47,25 @@ class Admin extends CI_Controller {
   }
 
   public function index()	{
+    if ($this->session->userdata('username')) {
+
+      // Action : new post
+      if (isset($_GET['create'])) {
+        if (isset($_POST['featured'])) $featured = true; else $featured = false;
+        if (isset($_POST['published'])) $published = true; else $published = false;
+        if (isset($_POST['title'])) $title = $_POST['title']; else $title = '';
+        if (isset($_POST['tags'])) $tags = $_POST['tags']; else $tags = '';
+        if (isset($_POST['ckeditor_content'])) $content = $_POST['ckeditor_content']; else $content = '';
+
+        if ($this->Blog->insert_post($title, $published, $featured, $tags, $content)) {
+          $this->content_data['ok_message'] = 'New blog post "' . $title . '" has been saved!';
+        } else {
+          $this->content_data['error_message'] = 'Blog post hasn\'t been saved, due to missing or incorrect data!';
+        }
+      }
+
+    }
+
     $this->load->view('header', $this->meta_data);
     $this->load->view('admin/' . $this->panel_view, $this->panel_data);
     $this->load->view('admin/' . $this->content_view, $this->content_data);

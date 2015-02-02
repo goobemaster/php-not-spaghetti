@@ -1,0 +1,39 @@
+.message {
+  display:block;
+  padding:8px;
+  margin:0px;
+  margin-bottom:15px;
+  color:white;
+}
+
+.ok {
+  background-color:LightGreen;
+  border:3px solid ForestGreen;
+  color:DarkGreen;
+  border-left-width:0px;
+  border-right-width:0px;
+}
+
+.error {
+  background-color:Salmon;
+  border:3px solid IndianRed;
+  color:DarkRed;
+  border-left-width:0px;
+  border-right-width:0px;
+}
+
+.info {
+  background-color:LightSkyBlue;
+  border:3px solid DodgerBlue;
+  color:DarkBlue;
+  border-left-width:0px;
+  border-right-width:0px;
+}
+
+.message img {
+  float:left;
+  vertical-align:middle;
+  width:19px;
+  height:19px;
+  margin-right:8px;
+}

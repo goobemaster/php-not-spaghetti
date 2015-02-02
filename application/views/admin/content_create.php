@@ -9,7 +9,7 @@
   ex. 'cool,awesome,topic'"/></div><br/>
 
       <div class="cell label">&nbsp;</div>
-      <div class="cell"><textarea id="ckeditor_content"></textarea><script>CKEDITOR.replace('ckeditor_content');</script></div><br/>
+      <div class="cell"><textarea id="ckeditor_content" name="ckeditor_content"></textarea><script>CKEDITOR.replace('ckeditor_content');</script></div><br/>
 
       <div class="cell label">Published:</div>
       <div class="cell"><input type="checkbox" id="published" name="published" checked/></div><br/>

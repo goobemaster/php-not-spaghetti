@@ -1,5 +1,9 @@
 <?php
 
+function sql_now() {
+  return strftime('%Y-%m-%d %H:%M:%S', now());
+}
+
 function query_style_overrides($config) {
   $style_override = array('apply' => false,
                           'header_background' => $config->get('header_background'),
@@ -90,6 +94,33 @@ class FormValidatorClient {
     $this->script .= '</script>';
 
     return $this->script;
+  }
+}
+
+class FormValidatorServer {
+  private $fields;
+
+  function __construct() {
+    $this->fields = array();
+  }
+
+  function field($id, $type = 'text', $min_length = 1, $max_length = 256, $pattern = '/.*/') {
+    array_push($this->fields, new FormValidatorField($id, $type, $min_length, $max_length, $pattern));
+  }
+
+  function validate($input_fields) {
+    if (count($this->fields)) {
+      foreach($this->fields as $field) {
+        $input = $input_fields[$field->id];
+        if ($field->type == 'text') {
+//          if ($field->pattern && !preg_match($field->pattern, $input)) return false;
+          if (strlen($input) < $field->min_length || strlen($input) > $field->max_length) return false;
+        }
+      }
+    } else {
+      return false;
+    }
+    return true;
   }
 }
 

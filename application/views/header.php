@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/blog_entry.css">
   <link rel="stylesheet" href="css/nav.css">
   <?php if ($interface == 'backend') { ?>
+  <link rel="stylesheet" href="css/admin.css">
   <link rel="stylesheet" href="css/admin_login.css">
   <link rel="stylesheet" href="css/admin_panel.css">
   <link rel="stylesheet" href="css/admin_create.css">
