@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/admin_login.css">
   <link rel="stylesheet" href="css/admin_panel.css">
   <link rel="stylesheet" href="css/admin_create.css">
+  <link rel="stylesheet" href="css/admin_post.css">
   <?php } ?>
 
   <?php if ($style_override['apply']) { ?>
