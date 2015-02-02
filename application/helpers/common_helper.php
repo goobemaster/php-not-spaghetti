@@ -51,3 +51,56 @@ function fb_share_button($href, $layout = 'box_count') {
 function twitter_share_button($href) {
   return '<a href="https://twitter.com/share" class="twitter-share-button" data-url="' . $href . '">Tweet</a>';
 }
+
+class FormValidatorClient {
+  public $id, $script;
+  private $fields;
+
+  function __construct($id) {
+    $this->id = $id;
+    $this->fields = array();
+  }
+
+  function field($id, $type = 'text', $min_length = 1, $max_length = 256, $pattern = '/.*/') {
+    array_push($this->fields, new FormValidatorField($id, $type, $min_length, $max_length, $pattern));
+  }
+
+  function script() {
+    $this->script = '<script>document.getElementById("' . $this->id . '").onsubmit = function() {';
+
+    if (count($this->fields)) {
+      foreach($this->fields as $field) {
+        if ($field->type == 'text') {
+          if ($field->pattern) $regexp = '|| !/' . $field->pattern . '/.test(' . $field->id . '.val())'; else $regexp = '';
+          $this->script .= 'var ' . $field->id . ' = $("#' . $field->id . '");';
+          $this->script .= 'var ' . $field->id . '_length = ' . $field->id . '.val().length;';
+          $this->script .= 'if (' . $field->id . '_length < ' . $field->min_length . ' || ' . $field->id . '_length > ' . $field->max_length . ' ' . $regexp . ') { ' . $field->id . '.attr("style", "border:1px solid red;background-color:lightsalmon;"); return false; };';
+        }
+      }
+      $this->script .= 'return true; };';
+
+      // TODO: This could be done in one loop
+      foreach($this->fields as $field) {
+        $this->script .= '$("#' . $field->id . '").click(function() { $(this).removeAttr("style"); });';
+      }
+    } else {
+      $this->script .= 'return true; };';
+    }
+
+    $this->script .= '</script>';
+
+    return $this->script;
+  }
+}
+
+class FormValidatorField {
+  public $id, $type, $min_length, $max_length, $pattern;
+
+  function __construct($id, $type, $min_length, $max_length, $pattern) {
+    $this->id = $id;
+    $this->type = $type;
+    $this->min_length = $min_length;
+    $this->max_length = $max_length;
+    $this->pattern = $pattern;
+  }
+}

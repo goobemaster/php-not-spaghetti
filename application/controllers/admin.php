@@ -56,9 +56,8 @@ class Admin extends CI_Controller {
   public function create() {
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_create';
+      $this->meta_data['ckeditor'] = true;
     }
-
-    $this->meta_data['ckeditor'] = true;
 
     $this->load->view('header', $this->meta_data);
     $this->load->view('admin/' . $this->panel_view, $this->panel_data);

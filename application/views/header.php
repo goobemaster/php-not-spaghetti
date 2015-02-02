@@ -56,6 +56,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
   <?php if ($ckeditor) { echo '<script src="js/ckeditor/ckeditor.js"></script>'; } ?>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
