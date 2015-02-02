@@ -83,4 +83,16 @@ class Admin extends CI_Controller {
     $this->load->view('admin/' . $this->content_view, $this->content_data);
     $this->load->view('footer', $this->meta_data);
   }
+
+  public function post() {
+    if ($this->session->userdata('username')) {
+      $this->content_view = 'content_list';
+      $this->content_data['blog'] = $this->Blog->get_all();
+    }
+
+    $this->load->view('header', $this->meta_data);
+    $this->load->view('admin/' . $this->panel_view, $this->panel_data);
+    $this->load->view('admin/' . $this->content_view, $this->content_data);
+    $this->load->view('footer', $this->meta_data);
+  }
 }
