@@ -131,6 +131,14 @@ class Admin extends CI_Controller {
         }
       }
 
+      if ($method == 'delete') {
+        if (isset($_POST['id'])) {
+          if ($this->Blog->delete($_POST['id'])) http_response(200); else http_response(400);
+        } else {
+          http_response(400);
+        }
+      }
+
       http_response(405);
 
     } else {

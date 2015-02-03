@@ -57,4 +57,5 @@ table#post tbody tr td:nth-child(5) img {
   width:19px;
   height:19px;
   margin-right:6px;
+  cursor:pointer;
 }

@@ -21,3 +21,14 @@ function feature(id, status) {
   }
 }
 
+function remove_post(id) {
+  if (confirm("Are you sure you want to delete the post?\n\nCaution! Deletion will be final and irreversible!") == true) {
+    post('admin/api/delete', 'id=' + id);
+    $("#post_" + id.toString()).detach();
+
+    if ($("#post td").length == 0) {
+      $("#post").detach();
+      $(".admin").html("<p>There are no blog posts yet!</p>");
+    }
+  }
+}

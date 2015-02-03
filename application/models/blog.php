@@ -125,4 +125,13 @@ class Blog extends CI_Model {
       return false;
     }
   }
+
+  function delete($id) {
+    if (count($this->get_by_id($id)) == 1) {
+      $this->db->delete('blog', array('id' => $id));
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
