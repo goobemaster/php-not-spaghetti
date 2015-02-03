@@ -95,4 +95,46 @@ class Admin extends CI_Controller {
     $this->load->view('admin/' . $this->content_view, $this->content_data);
     $this->load->view('footer', $this->meta_data);
   }
+
+  public function api($method) {
+    if ($this->session->userdata('username')) {
+
+      if ($method == 'publish') {
+        if (isset($_POST['id'])) {
+          if ($this->Blog->publish($_POST['id'])) http_response(200); else http_response(400);
+        } else {
+          http_response(400);
+        }
+      }
+
+      if ($method == 'unpublish') {
+        if (isset($_POST['id'])) {
+          if ($this->Blog->unpublish($_POST['id'])) http_response(200); else http_response(400);
+        } else {
+          http_response(400);
+        }
+      }
+
+      if ($method == 'feature') {
+        if (isset($_POST['id'])) {
+          if ($this->Blog->feature($_POST['id'])) http_response(200); else http_response(400);
+        } else {
+          http_response(400);
+        }
+      }
+
+      if ($method == 'unfeature') {
+        if (isset($_POST['id'])) {
+          if ($this->Blog->unfeature($_POST['id'])) http_response(200); else http_response(400);
+        } else {
+          http_response(400);
+        }
+      }
+
+      http_response(405);
+
+    } else {
+      http_response(401);
+    }
+  }
 }

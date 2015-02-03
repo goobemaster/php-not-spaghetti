@@ -135,3 +135,21 @@ class FormValidatorField {
     $this->pattern = $pattern;
   }
 }
+
+function http_response($code = 200) {
+  switch ($code) {
+    case '200':
+      echo 'OK';
+      http_response_code(200);
+      break;
+    case '400':
+      echo '400 Bad Request';
+      http_response_code(400);
+      break;
+    case '401':
+      echo '401 Unauthorized';
+      http_response_code(401);
+      break;
+  }
+  die;
+}

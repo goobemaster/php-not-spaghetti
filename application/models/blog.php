@@ -85,4 +85,44 @@ class Blog extends CI_Model {
       return false;
     }
   }
+
+  function publish($id) {
+    if (count($this->get_by_id($id)) == 1) {
+      $this->db->where('id', $id);
+      $this->db->update('blog', array('published' => '1'));
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function unpublish($id) {
+    if (count($this->get_by_id($id)) == 1) {
+      $this->db->where('id', $id);
+      $this->db->update('blog', array('published' => '0'));
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function feature($id) {
+    if (count($this->get_by_id($id)) == 1) {
+      $this->db->where('id', $id);
+      $this->db->update('blog', array('featured' => '1'));
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function unfeature($id) {
+    if (count($this->get_by_id($id)) == 1) {
+      $this->db->where('id', $id);
+      $this->db->update('blog', array('featured' => '0'));
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

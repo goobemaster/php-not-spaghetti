@@ -13,7 +13,9 @@
     <?php
         foreach($blog as $post) {
           echo '<tr>';
-          echo '<td>' . $post->title . '</td><td>' . $post->created . '</td><td><input type="checkbox" /></td><td><input type="checkbox" /></td><td><img src="media/images/edit-icon.png" alt="Edit" title="Edit"/><img src="media/images/delete-icon.png" alt="Delete" title="Delete"/></td>';
+          if ($post->published) $p = 'checked'; else $p = '';
+          if ($post->featured) $f = 'checked'; else $f = '';
+          echo '<td>' . $post->title . '</td><td>' . $post->created . '</td><td><input type="checkbox" ' . $p . ' onchange="publish(' . $post->id. ', this.checked);"/></td><td><input type="checkbox" ' . $f . ' onchange="feature(' . $post->id. ', this.checked);"/></td><td><img src="media/images/edit-icon.png" alt="Edit" title="Edit"/><img src="media/images/delete-icon.png" alt="Delete" title="Delete"/></td>';
           echo '</tr>';
         }
     echo '</tbody>';
