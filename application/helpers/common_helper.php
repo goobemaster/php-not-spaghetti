@@ -154,6 +154,10 @@ function http_response($code = 200) {
   die;
 }
 
+function refresh_page($in, $to) {
+  header("Refresh: $in; url=$to");
+}
+
 function extract_post_values($list, $process = false) {
   $values = array();
   foreach ($list as $field) {
