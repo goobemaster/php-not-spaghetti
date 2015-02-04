@@ -63,6 +63,9 @@
   <?php if ($interface == 'backend') { ?>
   <script src="js/api.js"></script>
   <script src="js/jscolor/jscolor.js"></script>
+  <script src="js/admin.js"></script>
+  <?php } else { ?>
+  <script src="js/common.js"></script>
   <?php } ?>
 </head>
 

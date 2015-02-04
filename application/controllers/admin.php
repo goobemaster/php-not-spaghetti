@@ -84,6 +84,9 @@ class Admin extends CI_Controller {
         }
       }
 
+      // Action : update appearance settings
+
+
     }
 
     $this->load->view('header', $this->meta_data);

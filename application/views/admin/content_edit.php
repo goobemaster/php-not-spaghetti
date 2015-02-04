@@ -24,7 +24,7 @@
     </form>
 
     <?php
-    $validator = new FormValidatorClient('edit');
+    $validator = new FormValidatorClient('create');
     $validator->field('title', 'text', '1', '255', false);
     $validator->field('tags', 'text', '-1', '256', '^(.+[^,]|(.+,)+[^,]|)$'); // TODO: Remove -1 hack, amend validator class to support zero length
     echo $validator->script();

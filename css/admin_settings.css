@@ -5,8 +5,22 @@
   margin-top:10px;
 }
 
+.settings .preview {
+  display:inline-block;
+  float:right;
+  width:560px;
+  height:400px;
+  text-align:center;
+}
+
+.settings .preview iframe {
+  border:2px inset lightgrey;
+  width:inherit;
+  height:inherit;
+}
+
 .settings .cell {
-  width:65%;
+  width:20%;
   display:inline-block;
   margin-bottom:6px;
 }
