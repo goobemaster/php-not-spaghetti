@@ -129,6 +129,26 @@ class Admin extends CI_Controller {
     $this->load->view('footer', $this->meta_data);
   }
 
+  public function settings($section) {
+    if ($this->session->userdata('username')) {
+      if ($section == 'appearance') {
+        $this->content_view = 'content_appearance';
+        $this->content_data['config'] = $this->Configuration->get_all();
+      } elseif ($section == 'widgets') {
+        $this->content_view = 'content_widgets';
+        $this->content_data['config'] = $this->Configuration->get_all();
+      } else {
+        $this->content_view = 'content_home';
+        $this->content_data['info_message'] = 'Unknown section!';
+      }
+    }
+
+    $this->load->view('header', $this->meta_data);
+    $this->load->view('admin/' . $this->panel_view, $this->panel_data);
+    $this->load->view('admin/' . $this->content_view, $this->content_data);
+    $this->load->view('footer', $this->meta_data);
+  }
+
   public function api($method) {
     if ($this->session->userdata('username')) {
 

@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/admin_panel.css">
   <link rel="stylesheet" href="css/admin_create.css">
   <link rel="stylesheet" href="css/admin_post.css">
+  <link rel="stylesheet" href="css/admin_settings.css">
   <?php } ?>
 
   <?php if ($style_override['apply']) { ?>
@@ -59,7 +60,10 @@
     }(document, 'script', 'facebook-jssdk'));</script>
   <?php if ($ckeditor) { echo '<script src="js/ckeditor/ckeditor.js"></script>'; } ?>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <?php if ($interface == 'backend') { ?>
   <script src="js/api.js"></script>
+  <script src="js/jscolor/jscolor.js"></script>
+  <?php } ?>
 </head>
 
 <body>

@@ -22,4 +22,10 @@ class Configuration extends CI_Model {
     return $value;
   }
 
+  function get_all() {
+    $all = array();
+    foreach($this->db->get('configuration')->result() as $config) { $all[$config->key] = $config->value; }
+    return $all;
+  }
+
 }

@@ -7,5 +7,10 @@
         <li><a href="admin/post">List all</a></li>
         <li><a href="admin/create">Create new</a></li>
       </ul>
+      <h1><img src="media/images/settings-icon.png" alt="Post" title="Create and manage posts"/>Settings</h1><div class="break"></div>
+      <ul>
+        <li><a href="admin/settings/appearance/">Appearance</a></li>
+        <li><a href="admin/settings/widgets/">Widgets</a></li>
+      </ul>
     </div>
   </nav>

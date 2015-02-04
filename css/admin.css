@@ -37,3 +37,16 @@
   height:19px;
   margin-right:8px;
 }
+
+.admin h1 {
+  clear:both;
+  font-size:20px;
+  margin:0px;
+  padding-bottom:15px;
+  text-transform:uppercase;
+  color:black;
+}
+
+.admin h1:not(:first-child) {
+  margin-top:15px;
+}
