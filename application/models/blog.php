@@ -86,6 +86,20 @@ class Blog extends CI_Model {
     }
   }
 
+  function update_post($id, $title, $published, $featured, $tags, $content) {
+    $validator = new FormValidatorServer();
+    $validator->field('title', 'text', '1', '255', false);
+    $validator->field('tags', 'text', '-1', '256', preg_quote('/^(.+[^,]|)$/')); // TODO: Remove -1 hack, amend validator class to support zero length
+
+    if ($validator->validate(array('title' => $title, 'tags' => $tags))) {
+      $this->db->where('id', $id);
+      $this->db->update('blog', array('title' => $title, 'published' => $published, 'featured' => $featured, 'tags' => $tags, 'content' => $content));
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   function publish($id) {
     if (count($this->get_by_id($id)) == 1) {
       $this->db->where('id', $id);

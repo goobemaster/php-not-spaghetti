@@ -64,6 +64,26 @@ class Admin extends CI_Controller {
         }
       }
 
+      // Action : update post
+      if (isset($_GET['update'])) {
+        if (isset($_POST['id'])) $id = $_POST['id']; else $id = false;
+        if (isset($_POST['featured'])) $featured = true; else $featured = false;
+        if (isset($_POST['published'])) $published = true; else $published = false;
+        if (isset($_POST['title'])) $title = $_POST['title']; else $title = '';
+        if (isset($_POST['tags'])) $tags = $_POST['tags']; else $tags = '';
+        if (isset($_POST['ckeditor_content'])) $content = $_POST['ckeditor_content']; else $content = '';
+
+        if ($id) {
+          if ($this->Blog->update_post($id, $title, $published, $featured, $tags, $content)) {
+            $this->content_data['ok_message'] = 'Blog post "' . $title . '" has been updated!';
+          } else {
+            $this->content_data['error_message'] = 'Blog post hasn\'t been updated, due to missing or incorrect data!';
+          }
+        } else {
+          $this->content_data['error_message'] = 'Blog post with such identifier cannot be found!';
+        }
+      }
+
     }
 
     $this->load->view('header', $this->meta_data);
@@ -75,6 +95,19 @@ class Admin extends CI_Controller {
   public function create() {
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_create';
+      $this->meta_data['ckeditor'] = true;
+    }
+
+    $this->load->view('header', $this->meta_data);
+    $this->load->view('admin/' . $this->panel_view, $this->panel_data);
+    $this->load->view('admin/' . $this->content_view, $this->content_data);
+    $this->load->view('footer', $this->meta_data);
+  }
+
+  public function edit($id) {
+    if ($this->session->userdata('username')) {
+      $this->content_view = 'content_edit';
+      $this->content_data['post'] = $this->Blog->get_by_id($id);
       $this->meta_data['ckeditor'] = true;
     }
 
