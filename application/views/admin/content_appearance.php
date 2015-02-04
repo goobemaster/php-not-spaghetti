@@ -1,12 +1,11 @@
 <div id="content">
   <div class="admin">
-    <form id="appearance" action="admin?create" method="post">
+    <form id="appearance" action="admin?appearance" method="post">
       <h1>Custom</h1>
       <p style="font-style:italic;">If you leave a field empty, the system will revert to a default value.</p>
       <div class="settings">
         <div class="preview"><h1>Preview</h1><iframe src="home" id="preview"></iframe></div>
 
-        <form id="appearance" action="admin?appearance" method="post">
         <div class="cell label long">Header Background:</div>
         <div class="cell"><input type="text" class="color" id="header_background" name="header_background" value="<?php echo $config['header_background'] ?>" onchange="update_preview('header', 'background-color:' + get_color('header_background'));"/></div><br/>
 
@@ -57,7 +56,6 @@
 
         <div class="cell label">&nbsp;</div>
         <div class="cell"><input type="submit" value="Save"/></div>
-        </form>
       </div>
 
       <h1>Theme</h1>

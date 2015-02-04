@@ -85,7 +85,13 @@ class Admin extends CI_Controller {
       }
 
       // Action : update appearance settings
-
+      if (isset($_GET['appearance'])) {
+        $settings = extract_post_values(array('header_background', 'header_font', 'header_font_size', 'panel_background', 'panel_font', 'content_background', 'page_background', 'footer_background', 'footer_font', 'footer_font_size', 'aside_background', 'aside_font', 'aside_font_size', 'tag_background', 'tag_color', 'link_color'), 'appearance');
+        if ($this->Configuration->update_batch($settings))
+          $this->content_data['ok_message'] = 'Appearance settings has been updated!';
+        else
+          $this->content_data['ok_error'] = 'Errors during updating appearance settings!';
+      }
 
     }
 

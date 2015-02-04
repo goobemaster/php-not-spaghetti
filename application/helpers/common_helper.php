@@ -153,3 +153,16 @@ function http_response($code = 200) {
   }
   die;
 }
+
+function extract_post_values($list, $process = false) {
+  $values = array();
+  foreach ($list as $field) {
+    if (isset($_POST[$field])) $values[$field] = $_POST[$field]; else $values[$field] = '';
+
+    if ($process == 'appearance') {
+      if (strpos($field, 'font_size') && $field != '') $values[$field] .= 'px';
+      if ((strpos($field, 'background') || strpos($field, 'color')) && $field != '') $values[$field] = '#' . $values[$field];
+    }
+  }
+  return $values;
+}

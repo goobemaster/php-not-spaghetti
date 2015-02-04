@@ -28,4 +28,20 @@ class Configuration extends CI_Model {
     return $all;
   }
 
+  function update_batch($list) {
+    if (count($list)) {
+      foreach($list as $key => $value) {
+        if (count($this->get($key)) == 1) {
+          $this->db->where('key', $key);
+          if (!$this->db->update('configuration', array('value' => $value))) return false;
+        } else {
+          return false;
+        }
+      }
+    } else {
+      return false;
+    }
+    return true;
+  }
+
 }
