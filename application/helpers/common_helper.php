@@ -160,8 +160,9 @@ function extract_post_values($list, $process = false) {
     if (isset($_POST[$field])) $values[$field] = $_POST[$field]; else $values[$field] = '';
 
     if ($process == 'appearance') {
-      if (strpos($field, 'font_size') && $field != '') $values[$field] .= 'px';
-      if ((strpos($field, 'background') || strpos($field, 'color')) && $field != '') $values[$field] = '#' . $values[$field];
+      // TODO: Use 1-2 regexp instead of patching...
+      if (strpos($field, 'font_size') && $values[$field] != '') $values[$field] .= 'px';
+      if ((strpos($field, 'background') || strpos($field, 'color')) && $values[$field] != '') $values[$field] = '#' . $values[$field];
     }
   }
   return $values;
