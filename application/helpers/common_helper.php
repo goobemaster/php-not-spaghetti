@@ -167,6 +167,9 @@ function extract_post_values($list, $process = false) {
       // TODO: Use 1-2 regexp instead of patching...
       if (strpos($field, 'font_size') && $values[$field] != '') $values[$field] .= 'px';
       if ((strpos($field, 'background') || strpos($field, 'color')) && $values[$field] != '') $values[$field] = '#' . $values[$field];
+    } elseif ($process == 'widgets') {
+      if (strpos($field, 'displayed') && $values[$field] == '') $values[$field] = '0';
+      if (strpos($field, 'displayed') && $values[$field] == 'on') $values[$field] = '1';
     }
   }
   return $values;

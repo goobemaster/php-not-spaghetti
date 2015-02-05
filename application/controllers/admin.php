@@ -91,7 +91,17 @@ class Admin extends CI_Controller {
           $this->content_data['ok_message'] = 'Appearance settings has been updated!';
           refresh_page(2, 'admin');
         } else {
-          $this->content_data['ok_error'] = 'Errors during updating appearance settings!';
+          $this->content_data['ok_error'] = 'Errors while updating appearance settings!';
+        }
+      }
+
+      // Action : update widget settings
+      if (isset($_GET['widgets'])) {
+        $settings = extract_post_values(array('post_list_displayed', 'post_list_ordering', 'search_displayed', 'tags_displayed', 'tag_size_max', 'tags_max'), 'widgets');
+        if ($this->Configuration->update_batch($settings)) {
+          $this->content_data['ok_message'] = 'Widget settings has been updated!';
+        } else {
+          $this->content_data['ok_error'] = 'Errors while updating widget settings!';
         }
       }
 

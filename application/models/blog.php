@@ -1,10 +1,15 @@
 <?php
 
-function date_compare($a, $b)
-{
+function date_compare($a, $b) {
   $t1 = strtotime($a->created);
   $t2 = strtotime($b->created);
   return $t1 - $t2;
+}
+
+function date_compare_reverse($a, $b) {
+  $t1 = strtotime($a->created);
+  $t2 = strtotime($b->created);
+  return $t2 - $t1;
 }
 
 class Blog extends CI_Model {
@@ -27,9 +32,13 @@ class Blog extends CI_Model {
     return $this->db->get('blog')->result();
   }
 
-  function blog_list() {
+  function blog_list($ordering) {
     $all_published = $this->get_all_published();
-    usort($all_published, 'date_compare');
+    if ($ordering == 'chronological') {
+      usort($all_published, 'date_compare');
+    } else {
+      usort($all_published, 'date_compare_reverse');
+    }
     return $all_published;
   }
 
