@@ -45,14 +45,14 @@
         <div class="cell label long">Aside Font Size:</div>
         <div class="cell"><input type="text" id="aside_font_size" name="aside_font_size" value="<?php echo str_replace('px', '', $config['aside_font_size']); ?>" onchange="update_preview('.blog aside', 'font-family:' + get_font('aside_font') + ';font-size:' + get_font_size('aside_font_size'))"/></div><br/>
 
+        <div class="cell label long">Link Color:</div>
+        <div class="cell"><input type="text" class="color" id="link_color" name="link_color" value="<?php echo $config['link_color'] ?>" onchange="update_preview('a, a:visited', 'color:' + get_color('link_color'));"/></div><br/>
+
         <div class="cell label long">Tag Background:</div>
         <div class="cell"><input type="text" class="color" id="tag_background" name="tag_background" value="<?php echo $config['tag_background'] ?>" onchange="update_preview('.tags .tag', 'background-color:' + get_color('tag_background'));"/></div><br/>
 
         <div class="cell label long">Tag Font Color:</div>
-        <div class="cell"><input type="text" class="color" id="tag_color" name="tag_color" value="<?php echo $config['tag_color'] ?>" onchange="update_preview('.tag', 'color:' + get_color('tag_color'));"/></div><br/>
-
-        <div class="cell label long">Link Color:</div>
-        <div class="cell"><input type="text" class="color" id="link_color" name="link_color" value="<?php echo $config['link_color'] ?>" onchange="update_preview('a, a:visited', 'color:' + get_color('link_color'));"/></div><br/>
+        <div class="cell"><input type="text" class="color" id="tag_color" name="tag_color" value="<?php echo $config['tag_color'] ?>" onchange="update_preview('.tag a', 'color:' + get_color('tag_color'));"/></div><br/>
 
         <div class="cell label">&nbsp;</div>
         <div class="cell"><input type="submit" value="Save"/></div>
