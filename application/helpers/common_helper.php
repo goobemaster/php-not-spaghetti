@@ -75,9 +75,9 @@ class FormValidatorClient {
     if (count($this->fields)) {
       foreach($this->fields as $field) {
         if ($field->type == 'text') {
-          if ($field->pattern) $regexp = '|| !/' . $field->pattern . '/.test(' . $field->id . '.val())'; else $regexp = '';
           $this->script .= 'var ' . $field->id . ' = $("#' . $field->id . '");';
-          $this->script .= 'var ' . $field->id . '_length = ' . $field->id . '.val().length;';
+          $this->script .= 'var ' . $field->id . '_length = parseInt(' . $field->id . '.val().length);';
+          if ($field->pattern) $regexp = '|| !/' . $field->pattern . '/.test(' . $field->id . '.val())'; else $regexp = '';
           $this->script .= 'if (' . $field->id . '_length < ' . $field->min_length . ' || ' . $field->id . '_length > ' . $field->max_length . ' ' . $regexp . ') { ' . $field->id . '.attr("style", "border:1px solid red;background-color:lightsalmon;"); return false; };';
         }
       }
