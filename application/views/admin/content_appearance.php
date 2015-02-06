@@ -72,17 +72,17 @@
       $validator = new FormValidatorClient('appearance');
       $validator->field('header_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('header_font', 'text', '0', '255', false);
-      $validator->field('header_font_size', 'text', '0', '3', '^[^0][1-9]{1,2}|$'); // See argument: http://stackoverflow.com/questions/750594/maximum-font-size-a-page-can-render
+      $validator->field('header_font_size', 'text', '0', '3', '^([1-9]{1}[0-9]{0,2}|)$'); // See argument: http://stackoverflow.com/questions/750594/maximum-font-size-a-page-can-render
       $validator->field('panel_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('panel_font', 'text', '0', '255', false);
       $validator->field('content_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('page_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('footer_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('footer_font', 'text', '0', '255', false);
-      $validator->field('footer_font_size', 'text', '0', '3', '^[^0][1-9]{1,2}|$');
+      $validator->field('footer_font_size', 'text', '0', '3', '^([1-9]{1}[0-9]{0,2}|)$');
       $validator->field('aside_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('aside_font', 'text', '0', '255', false);
-      $validator->field('aside_font_size', 'text', '0', '3', '^[^0][1-9]{1,2}|$');
+      $validator->field('aside_font_size', 'text', '0', '3', '^([1-9]{1}[0-9]{0,2}|)$');
       $validator->field('link_color', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('tag_background', 'text', '6', '6', '^[0-9A-F]{6}$');
       $validator->field('tag_color', 'text', '6', '6', '^[0-9A-F]{6}$');

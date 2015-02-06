@@ -31,5 +31,11 @@
 
       <input type="submit" value="Save All"/></div>
     </form>
+    <?php
+      $validator = new FormValidatorClient('widgets');
+      $validator->field('tag_size_max', 'text', '0', '2', '^([1-9]{1}[0-9]{0,1}?|)$');
+      $validator->field('tags_max', 'text', '0', '3', '^([1-9]{1}[0-9]{0,2}|)$');
+      echo $validator->script();
+    ?>
   </div>
 </div>
