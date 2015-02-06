@@ -105,6 +105,16 @@ class Admin extends CI_Controller {
         }
       }
 
+      // Action : update general settings
+      if (isset($_GET['general'])) {
+        $settings = extract_post_values(array('title', 'lang', 'keywords', 'description', 'author', 'author_email'), false);
+        if ($this->Configuration->update_batch($settings)) {
+          $this->content_data['ok_message'] = 'General settings has been updated!';
+        } else {
+          $this->content_data['ok_error'] = 'Errors while updating general settings!';
+        }
+      }
+
     }
 
     $this->load->view('header', $this->meta_data);
@@ -157,6 +167,9 @@ class Admin extends CI_Controller {
         $this->content_data['config'] = $this->Configuration->get_all();
       } elseif ($section == 'widgets') {
         $this->content_view = 'content_widgets';
+        $this->content_data['config'] = $this->Configuration->get_all();
+      } elseif ($section == 'general') {
+        $this->content_view = 'content_general';
         $this->content_data['config'] = $this->Configuration->get_all();
       } else {
         $this->content_view = 'content_home';

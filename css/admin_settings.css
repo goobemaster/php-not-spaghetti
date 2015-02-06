@@ -25,6 +25,19 @@
   margin-bottom:6px;
 }
 
+#general .settings .cell {
+  width:45%;
+}
+
+#general .settings .label {
+  width:20%;
+}
+
+.settings textarea {
+  width:260px;
+  height:150px;
+}
+
 .settings .label {
   width:20%;
   display:inline-block;
