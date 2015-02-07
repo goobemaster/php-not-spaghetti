@@ -174,3 +174,12 @@ function extract_post_values($list, $process = false) {
   }
   return $values;
 }
+
+function test_mysql($hostname, $username, $password) {
+  $link = @mysqli_connect($hostname, $username, $password);
+  if(!$link) {
+    return false;
+  } else {
+    return true;
+  }
+}

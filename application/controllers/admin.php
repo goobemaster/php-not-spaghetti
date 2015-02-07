@@ -5,9 +5,9 @@ class Admin extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
+//    if (!$this->config->item('installed')) return;
 
     $this->load->helper('url');
-    $this->load->helper('common');
     $this->load->model('Configuration', '', TRUE);
     $this->load->model('Blog', '', TRUE);
     $this->load->model('User', '', TRUE);
@@ -47,6 +47,8 @@ class Admin extends CI_Controller {
   }
 
   public function index()	{
+//    if (!$this->config->item('installed')) return;
+
     if ($this->session->userdata('username')) {
 
       // Action : new post
@@ -124,6 +126,8 @@ class Admin extends CI_Controller {
   }
 
   public function create() {
+//    if (!$this->config->item('installed')) return;
+
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_create';
       $this->meta_data['ckeditor'] = true;
@@ -136,6 +140,8 @@ class Admin extends CI_Controller {
   }
 
   public function edit($id) {
+//    if (!$this->config->item('installed')) return;
+
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_edit';
       $this->content_data['post'] = $this->Blog->get_by_id($id);
@@ -149,6 +155,8 @@ class Admin extends CI_Controller {
   }
 
   public function post() {
+//    if (!$this->config->item('installed')) return;
+
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_list';
       $this->content_data['blog'] = $this->Blog->get_all();
@@ -161,6 +169,8 @@ class Admin extends CI_Controller {
   }
 
   public function settings($section) {
+//    if (!$this->config->item('installed')) return;
+
     if ($this->session->userdata('username')) {
       if ($section == 'appearance') {
         $this->content_view = 'content_appearance';
@@ -184,6 +194,8 @@ class Admin extends CI_Controller {
   }
 
   public function api($method) {
+//    if (!$this->config->item('installed')) return;
+
     if ($this->session->userdata('username')) {
 
       if ($method == 'publish') {

@@ -2,7 +2,7 @@
 <html lang="<?php echo $lang; ?>">
 <head>
   <title><?php echo $title; ?></title>
-  <meta name="generator" content="Simple Blog">
+  <meta name="generator" content="PHP-Simple-Blog">
   <meta name="keywords" content="<?php echo $keywords; ?>">
   <meta name="description" content="<?php echo $description; ?>">
   <meta name="author" content="<?php echo $author; ?>">

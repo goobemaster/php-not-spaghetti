@@ -52,12 +52,29 @@ class CI_Controller {
 		$this->load->initialize();
 		
 		log_message('debug', "Controller Class Initialized");
+
+//    if (!$this->config->item('installed')) $this->install();
 	}
 
 	public static function &get_instance()
 	{
 		return self::$instance;
 	}
+
+  public function install() {
+    $this->load->helper('url');
+
+    if (isset($_GET['step'])) {
+      if ($_GET['step'] > 1 && $_GET['step'] <= 4) $step = $_GET['step']; else $step = 1;
+    } else {
+      $step = 1;
+    }
+    if ($step == 4) {
+      $this->config->set_item('installed', true);
+    }
+    $this->load->view('install/step_' . $step, array('base_url' => base_url()));
+  }
+
 }
 // END Controller class
 
