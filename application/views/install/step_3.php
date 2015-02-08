@@ -40,8 +40,17 @@
       refresh_page(0, '?step=2&e');
     } else {
       // Installation
-      file_put_contents('application/config/php_simple_blog.php', '<?php  if ( ! defined(\'BASEPATH\')) exit(\'No direct script access allowed\'); $config[\'installed\']	= true;');
+      set_config_permanent('application/config/php_simple_blog.php', 'installed', true);
+      set_config_permanent('application/config/database.php', 'db_hostname', $db_hostname);
+      set_config_permanent('application/config/database.php', 'db_username', $db_username);
+      set_config_permanent('application/config/database.php', 'db_password', $db_password);
+      set_config_permanent('application/config/database.php', 'autoinit', true);
+      set_config_permanent('application/config/database.php', 'database', 'php-simple-blog');
 
+      update_install_sql($full_name, $email, $username, $password);
+      $link = new mysqli($db_hostname, $db_username, $db_password);
+      mysqli_multi_query($link, file_get_contents('installation/php-simple-blog.sql'));
+      $link->close();
     }
     ?>
   </form>

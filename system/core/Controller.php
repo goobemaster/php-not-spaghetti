@@ -53,7 +53,7 @@ class CI_Controller {
 		
 		log_message('debug', "Controller Class Initialized");
 
-//    if (!$this->config->item('installed')) $this->install();
+    if (!$this->config->item('installed')) $this->install();
 	}
 
 	public static function &get_instance()

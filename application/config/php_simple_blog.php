@@ -11,7 +11,7 @@
 | first run.
 |
 */
-$config['installed']	= false;
+$config['installed'] = false;
 
 
 /* End of file config.php */

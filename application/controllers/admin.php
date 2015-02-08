@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     $this->load->helper('url');
     $this->load->model('Configuration', '', TRUE);
@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
   }
 
   public function index()	{
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     if ($this->session->userdata('username')) {
 
@@ -126,7 +126,7 @@ class Admin extends CI_Controller {
   }
 
   public function create() {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_create';
@@ -140,7 +140,7 @@ class Admin extends CI_Controller {
   }
 
   public function edit($id) {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_edit';
@@ -155,7 +155,7 @@ class Admin extends CI_Controller {
   }
 
   public function post() {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     if ($this->session->userdata('username')) {
       $this->content_view = 'content_list';
@@ -169,7 +169,7 @@ class Admin extends CI_Controller {
   }
 
   public function settings($section) {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     if ($this->session->userdata('username')) {
       if ($section == 'appearance') {
@@ -194,7 +194,7 @@ class Admin extends CI_Controller {
   }
 
   public function api($method) {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     if ($this->session->userdata('username')) {
 

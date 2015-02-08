@@ -48,10 +48,17 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'php-simple-blog';
+$config = array();
+$config['db_hostname'] = 'localhost';
+$config['db_username'] = 'root';
+$config['db_password'] = '';
+$config['database'] = '';
+$config['autoinit'] = false;
+
+$db['default']['hostname'] = $config['db_hostname'];
+$db['default']['username'] = $config['db_username'];
+$db['default']['password'] = $config['db_password'];
+$db['default']['database'] = $config['database'];
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -61,7 +68,7 @@ $db['default']['cachedir'] = '';
 $db['default']['char_set'] = 'utf8';
 $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
+$db['default']['autoinit'] = $config['autoinit'];
 $db['default']['stricton'] = FALSE;
 
 

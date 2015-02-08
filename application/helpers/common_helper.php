@@ -178,8 +178,48 @@ function extract_post_values($list, $process = false) {
 function test_mysql($hostname, $username, $password) {
   $link = @mysqli_connect($hostname, $username, $password);
   if(!$link) {
+    $link->close();
     return false;
   } else {
+    $link->close();
     return true;
   }
+}
+
+function set_config_permanent($file, $key, $value) {
+  if (file_exists($file)) {
+    $lines = explode("\n", file_get_contents($file));
+    $item = 0;
+    foreach($lines as $line) {
+      if (preg_match("/config\['" . $key . "'\] =/", $line)) {
+        if (is_string($value)) {
+          $lines[$item] = '$config[\'' . $key . '\'] = \'' . $value . '\';';
+        } else {
+          $lines[$item] = '$config[\'' . $key . '\'] = ' . $value . ';';
+        }
+        file_put_contents($file, implode("\n", $lines));
+        return true;
+      }
+      $item++;
+    }
+  }
+  return false;
+}
+
+function update_install_sql($full_name, $email, $username, $password) {
+  $file = 'installation/php-simple-blog.sql';
+  if (file_exists($file)) {
+    $lines = explode("\n", file_get_contents($file));
+    $item = 0;
+    foreach($lines as $line) {
+      if (preg_match("/(@full_name@|@email@|@username@|@password@)/", $line)) {
+        $lines[$item] = str_replace('@full_name@', $full_name, $lines[$item]);
+        $lines[$item] = str_replace('@email@', $email, $lines[$item]);
+        $lines[$item] = str_replace('@username@', $username, $lines[$item]);
+        $lines[$item] = str_replace('@password@', base64_encode($password), $lines[$item]);
+      }
+      $item++;
+    }
+  }
+  file_put_contents($file, implode("\n", $lines));
 }

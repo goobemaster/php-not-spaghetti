@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     $this->load->helper('url');
     $this->load->model('Configuration', '', TRUE);
@@ -37,7 +37,7 @@ class Home extends CI_Controller {
   }
 
 	public function index()	{
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
 		$this->load->view('header', $this->meta_data);
     $this->load->view('panel', $this->panel_data);
@@ -46,7 +46,7 @@ class Home extends CI_Controller {
 	}
 
   public function post($id) {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     $post_id = false;
     preg_match('/^(\d+)/', $id, $post_id);
@@ -64,7 +64,7 @@ class Home extends CI_Controller {
   }
 
   public function search() {
-//    if (!$this->config->item('installed')) return;
+    if (!$this->config->item('installed')) return;
 
     $this->content_data = array('results' => $this->Blog->get_by_keyword($_GET['keyword'], isset($_GET['tags'])));
 
