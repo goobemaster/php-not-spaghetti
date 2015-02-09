@@ -33,7 +33,7 @@
       <div class="cell"><input type="text" id="db_password" name="db_password" value=""/></div><br/>
 
       <div class="buttons"><div class="outer"><input type="submit" value="Next"/></div></div>
-    <?php } else { echo '<p style="color:red;">Installer cannot proceed. Please ensure that files inside the following directories are writable:</p><ul><li>/installer</li><li>/application/config</li></ul><p>If you are not permitted to do this manually, please contact your hosting provider or system administrator.</p>'; } ?>
+    <?php } else { echo '<p style="color:red;">Installer cannot proceed. Please ensure that files inside the following directories are writable:</p><ul><li>/installer</li><li>/application/config</li></ul><p>If you are not permitted to do this manually, please contact your hosting provider or system administrator.<br/><br/>If you are running on a local host, try to run your LAMP stack with administrator rights.</p>'; } ?>
     </div>
     </form>
   </div>
