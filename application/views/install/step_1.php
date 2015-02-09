@@ -19,6 +19,7 @@
     <h2>Step 1 / 3</h2>
     <form id="install" action="?step=2" method="post" style="display:none;">
     <div class="fields"><div class="title">MySQL Database</div>
+    <?php if ($file_permission) { ?>
       <?php if (isset($_GET['e'])) { echo '<p style="color:red;">Failed to connect to the server</p>'; } ?>
       <p>Your hosting provider or system administrator can give you these details.</p>
 
@@ -32,6 +33,7 @@
       <div class="cell"><input type="text" id="db_password" name="db_password" value=""/></div><br/>
 
       <div class="buttons"><div class="outer"><input type="submit" value="Next"/></div></div>
+    <?php } else { echo '<p style="color:red;">Installer cannot proceed. Please ensure that files inside the following directories are writable:</p><ul><li>/installer</li><li>/application/config</li></ul><p>If you are not permitted to do this manually, please contact your hosting provider or system administrator.</p>'; } ?>
     </div>
     </form>
   </div>

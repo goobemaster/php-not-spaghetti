@@ -65,14 +65,19 @@ class CI_Controller {
     $this->load->helper('url');
 
     if (isset($_GET['step'])) {
-      if ($_GET['step'] > 1 && $_GET['step'] <= 4) $step = $_GET['step']; else $step = 1;
+      if ($_GET['step'] > 1 && $_GET['step'] <= 3) $step = $_GET['step']; else $step = 1;
     } else {
       $step = 1;
     }
-    if ($step == 4) {
-      $this->config->set_item('installed', true);
+
+    if (!is_writable('installation/php-simple-blog.sql') || !is_writable('application/config/database.php') || !is_writable('application/config/php_simple_blog.php')) {
+      $permission = false;
+      $step = 1;
+    } else {
+      $permission = true;
     }
-    $this->load->view('install/step_' . $step, array('base_url' => base_url()));
+
+    $this->load->view('install/step_' . $step, array('base_url' => base_url(), 'file_permission' => $permission));
   }
 
 }
