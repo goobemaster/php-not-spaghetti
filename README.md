@@ -34,7 +34,7 @@ Please test it, and comment. Suggestions, feature requests, and contributions ar
 
 # Overview
 
-PHP-Simple-Blog is a down to earth [free](#licence) **personal blogging web application**. It is **easy to deploy and configure**, and it comes bundled with an **administration panel** too. Start authoring in less than 5 minutes, and really **own what you write**.
+PHP-Simple-Blog is a down to earth [free](#licence) **personal blogging web application**. It is **easy to deploy and configure**, and it comes bundled with an **administration panel** too. Start authoring in less than 15 minutes, and really **own what you write**.
 
 The goal is to continuously extend the features of PHP-Simple-Blog without ever compromising **simplicity and ease of use**. If you are looking for a Content Management System, check out [Joomla](https://www.joomla.org/) and [Drupal](https://www.drupal.org/).
 
@@ -108,9 +108,44 @@ PHP-Simple-Blog builds upon, or have integrated:
 
 ## Licence
 
+PHP-Simple-Blog is licensed to you via the [GNU General Public licence version 2](https://github.com/goobemaster/php-simple-blog/blob/master/LICENSE).
+
+Please read it carefully before you start using the software, or if you intended to distribute/modify the source code.
+
 [Jump to Table of Contents](#table-of-contents)
 
 # Installation
+
+## 1. Hosting
+
+The software needs around 16Mb of free space, either on your local machine, or on a web hosting machine. If you plan to embed photos, images or other multimedia files in your posts, a whole lot more space is required. A decent 250-500Mb is highly recommended.
+
+In an everyday scenario, given you would like to make your blog available on the internet, you have to find a hosting provider. If you do not care about the domain name, sign up for a free hosting service. *In this case your blog's url would look like e.g* **www.awesome-host.com/username/**
+
+If you prefer having a unique and personal domain name, you have to register it first for a determined period of time. Most hosting providers can do this for you, and offer domain + host in a package. *In this case your blog's url would look like e.g* **www.my-awesome-blog.com/**
+
+The hosting service **must** include: **PHP** and **MySQL** support!
+
+You have to ask your hosting provider for **MySQL database authentication details** (hostname, username, password)!
+
+## 2. Uploading
+
+Once you have signed up for such a service, upload the entire latest stable version. Most service allows you to sign in to an administration panel, where you can conveniently upload files.
+
+Alternatively, you can upload via an FTP application to the hosting machine. Ask your provider for the authentication details (server host name, username, password).
+
+Suggested applications:
+- [Total Commander](http://www.ghisler.com/) - Windows
+- [FileZilla](https://filezilla-project.org/) - Multi platform
+- [Gftp](http://gftp.seul.org/) - Linux
+
+## 3. In-browser Installer
+
+Open your blog in a browser, and follow the simple steps:
+
+![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/install_1.jpg "Preview")
+
+![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/install_2.jpg "Preview")
 
 [Jump to Table of Contents](#table-of-contents)
 
