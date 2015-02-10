@@ -4,7 +4,7 @@ This project is a WIP. First stable release is expected in the coming days.
 
 Please test it, and comment. Suggestions, feature requests, and contributions are also welcome.
 
-![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/preview.png "Preview")
+![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/doc/images/preview.png "Preview")
 
 - [Overview](#overview)
   - [Features](#features)
