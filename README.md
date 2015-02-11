@@ -155,11 +155,9 @@ Please go through the installation process as soon as you uploaded the applicati
 
 # Frontend
 
-In the software world we call the user facing interface the frontend. It is tipically either an application running on your desktop or mobile computer (e.g smartphone), or it is a web application running in a browser.
+In software terminology frontend is the user facing interface. It is tipically either an application running on your desktop or mobile computer (e.g smartphone), or it is a web application running in a browser.
 
 The PHP-Simple-Blog frontend is composed of several pages. These pages can be loaded via following links, or typing in the url in the expected format manually.
-
-Whenever an identifier is expected in the url you'll see it in {brackets}. Optional portions are enclosed in [square brackets].
 
 |Page Name|Deeplink|
 |---------|--------|
@@ -167,6 +165,8 @@ Whenever an identifier is expected in the url you'll see it in {brackets}. Optio
 |Single Post Page|/home/post/{post-id}-[{post-title}] |
 |Search Results for Keyword | /home/search?keyword={keyword}|
 |Search Results for Tag | /home/search?keyword={tag}&tag|
+
+*Whenever an identifier is expected in the url you'll see it in {brackets}. Optional portions are enclosed in [square brackets]. The brackets are not part of the real url.*
 
 [Jump to Table of Contents](#table-of-contents)
 
