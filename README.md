@@ -143,9 +143,9 @@ Suggested applications:
 
 Open your blog in a browser, and follow the simple steps:
 
-![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/install_1.jpg "Preview")
+![Installer Step 1](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/install_1.jpg "Installer Step 1")
 
-![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/install_2.jpg "Preview")
+![Installer Step 2](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/install_2.jpg "Installer Step 2")
 
 After step 3 the installer cannot be invoked again, and the blog becomes live.
 
@@ -171,6 +171,10 @@ The PHP-Simple-Blog frontend is composed of several pages. These pages can be lo
 [Jump to Table of Contents](#table-of-contents)
 
 ## Layout
+
+Currently PHP-Simple-Blog provides a single, classic two-column layout.
+
+![Layout](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/layout.jpg "Layout")
 
 [Jump to Table of Contents](#table-of-contents)
 
