@@ -71,13 +71,10 @@ class CI_Controller {
     }
 
     if (!is_writable('installation/php-simple-blog.sql') || !is_writable('application/config/database.php') || !is_writable('application/config/php_simple_blog.php')) {
-      try {
-        chmod('installation/php-simple-blog.sql', 0775);
-        chmod('application/config/database.php', 0775);
-        chmod('application/config/php_simple_blog.php', 0775);
+      if (chmod('installation/php-simple-blog.sql', 0775) && chmod('application/config/database.php', 0775) && chmod('application/config/php_simple_blog.php', 0775)) {
         $permission = true;
         $step = 1;
-      } catch (Exception $e) {
+      } else {
         $permission = false;
         $step = 1;
       }
