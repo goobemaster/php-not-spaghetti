@@ -1,8 +1,6 @@
 # PHP-Simple-Blog
 
-This project is WIP. First stable release is expected in the coming days.
-
-Please test it, and comment. Suggestions, feature requests, and contributions are also welcome.
+This project is defunct. It was never finished properly.
 
 ![alt text](https://github.com/goobemaster/php-simple-blog/blob/master/media/images/doc/preview.png "Preview")
 
